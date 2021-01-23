@@ -23,8 +23,9 @@ pkgver() {
 }
 
 prepare() {
+    echo $CARCH
     cd "${srcdir}/RTL88x2BU-Linux-Driver"
-    if [ "$CARCH" = "armv7l" ]; then
+    if [ "$CARCH" = "armv7h" ]; then
     	patch --forward --strip=1 --input="${srcdir}/set-arm-arch.patch"
     fi
 }
